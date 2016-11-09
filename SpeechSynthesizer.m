@@ -11,7 +11,7 @@ RCT_EXPORT_METHOD(speakUtterance:(NSDictionary *)args callback:(RCTResponseSende
 {
     // Error if self.synthesizer was already initialized
     if (self.synthesizer) {
-      RCTLogError(@"There is a speech in progress.  Use the `paused` method to know if it's paused.");
+      //RCTLogError(@"There is a speech in progress.  Use the `paused` method to know if it's paused.");
     }
 
     // Set args to variables
@@ -21,7 +21,7 @@ RCT_EXPORT_METHOD(speakUtterance:(NSDictionary *)args callback:(RCTResponseSende
 
     // Error if no text is passed
     if (!text) {
-        //RCTLogError(@"[Speech] You must specify a text to speak.");
+        RCTLogError(@"[Speech] You must specify a text to speak.");
         return;
     }
 
