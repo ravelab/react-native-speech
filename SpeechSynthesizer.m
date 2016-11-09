@@ -21,7 +21,7 @@ RCT_EXPORT_METHOD(speakUtterance:(NSDictionary *)args callback:(RCTResponseSende
 
     // Error if no text is passed
     if (!text) {
-        RCTLogError(@"[Speech] You must specify a text to speak.");
+        //RCTLogError(@"[Speech] You must specify a text to speak.");
         return;
     }
 
@@ -149,6 +149,7 @@ RCT_EXPORT_METHOD(speechVoices:(RCTResponseSenderBlock)callback)
 -(void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didCancelSpeechUtterance:(AVSpeechUtterance *)utterance
 {
     NSLog(@"Speech cancelled");
+    self.synthesizer = nil;
 }
 
 @end
